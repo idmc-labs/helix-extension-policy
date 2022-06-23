@@ -16,12 +16,8 @@ jobs:
     if: github.event_name == 'push'
 
     steps:
-      - uses: actions/download-artifact@v1
-        with:
-          name: static-privacy-policy # Change this
-          path: build
-
       # Copy build to S3
+      - uses: actions/checkout@v2
       - name: S3 Sync
         uses: jakejarvis/s3-sync-action@master
         with:
