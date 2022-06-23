@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: Release
-      url: https://static.idmcdb.org # Change this
+      url: https://static.idmcdb.org/helix-extension-policy # Change this
 
     if: github.event_name == 'push'
 
