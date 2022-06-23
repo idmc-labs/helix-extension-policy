@@ -1,11 +1,181 @@
- <!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+
 <head>
-<title>Sample header</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="Description" content="React client for Helix 2.0">
+
+    <title>
+        Helix Extension Policy
+    </title>
+
+    <style>
+        :root {
+            --font-family-sans-serif: 'PT Sans', sans-serif;
+            --font-family-monospace: 'Inconsolata', monospace;
+            --color-background: rgb(239, 239, 239);
+            --color-text: rgba(0, 0, 0, .7);
+        }
+
+        html,
+        body {
+            font-family: var(--font-family-sans-serif);
+            color: var(--color-text);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--dui-color-brand);
+            width: 100vw;
+            height: 100vh;
+        }
+
+        body .card {
+            display: flex;
+            max-width: 80vw;
+            height: 80vh;
+            overflow-y: auto;
+            border-radius: 0.5rem;
+            background-color: rgb(233 233 233);
+            padding: 0.79rem;
+
+
+        }
+
+        body .card .left-content {
+            width: 24rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-top-left-radius: 0.5rem;
+            border-bottom-left-radius: 0.5rem;
+        }
+
+        body .card .image-holder {
+            min-width: 120px;
+            max-width: 300px;
+        }
+
+        body .card .right-content {
+            margin: auto;
+            border-top-right-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+            background-color: #f3f3f3;
+            padding: 3.01rem;
+            min-width: 320px;
+            max-width: 800px;
+            height: 100%;
+            overflow-y: auto;
+
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(249, 249, 249, 0.3);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(119, 119, 119, 0.5);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        @media screen and (max-width: 1200px) {
+            h1 {
+                font-size: 30px;
+            }
+
+        }
+
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+
+        }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
-<body>
 
-<h1>This site is under construction...</h1>
+<body style="background-color: var(--color-background)">
+    <div id="extension-policy-root">
+        <div class="card">
+            <div class="left-content">
+                <div class="logo-holder">
+                    <img src="./logo.png" alt="logo" height="100%" width="100%" />
+                    <h3>Internal Displacement Monitoring Center</h3>
+                </div>
+            </div>
+            <div class="right-content">
+                <h1>HELIX Extension Privacy Policy</h1>
+                <div id="policy-list">
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- External resources  -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=PT+Sans:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <script>
+        const policies = [
+            {
+                question: 'General',
+                answer: 'Helix extension strives to take every necessary precaution to safeguard all user information on the platform.',
+            },
+            {
+                question: 'What information do we collect?',
+                answer: 'We only collect the URL for active tabs and send it to our server for extraction of relevant information. This process is carried out only when extension is active.',
+
+            },
+            {
+                question: 'What information is stored?',
+                answer: 'The extracted information through the URL is stored along with the access token for thedeep.io website.',
+            },
+            {
+                question: 'How we use your information?',
+                answer: 'We do not use any personal information.',
+            },
+            {
+                question: 'What information do we share?',
+                answer: 'We do not share your information with any parties unless required by law.',
+            },
+            {
+                question: 'How can I delete my data?',
+                answer: 'Since we do not store any personal data, there is no data to delete.',
+            },
+            {
+                question: 'How long do you keep my data for?',
+                answer: 'We only store data as long as you are logged into thedeep.io.',
+            },
+        ];
+
+        const policyList = document.getElementById('policy-list');
+
+        const paragraph = document.createElement("p");
+
+        for (i = 0; i < policies.length; i++) {
+            let question = document.createElement("h2");
+            question.textContent = policies[i].question;
+            policyList.appendChild(question);
+
+            let answer = document.createElement("p");
+            answer.textContent = policies[i].answer;
+            policyList.appendChild(answer);
+        }
+
+    </script>
 </body>
-</html> 
+
+</html>
