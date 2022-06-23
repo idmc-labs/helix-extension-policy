@@ -11,14 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: Release
-            url: https://yourwebsite.com # Change this
+      url: https://static.idmcdb.org # Change this
 
     if: github.event_name == 'push'
 
     steps:
       - uses: actions/download-artifact@v1
         with:
-          name: website-name # Change this
+          name: static-privacy-policy # Change this
           path: build
 
       # Copy build to S3

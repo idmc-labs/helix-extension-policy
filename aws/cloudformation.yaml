@@ -15,10 +15,10 @@ Mappings:
   EnvMaps:
     prod:
       # Change these variables
-      Domain: your-domain.com
-      BucketName: your-bucket-name
-      PolicyName: your-policy-name
-      UpdateIamUserName: your-username
+      Domain: static.idmcdb.org
+      BucketName: static-privacy-policy
+      PolicyName: static-privacy-policy-s3-bucket-update-policy
+      UpdateIamUserName: static-privacy-policy-s3-bucket-update-user
 
 Resources:
   WebsiteBucket:
